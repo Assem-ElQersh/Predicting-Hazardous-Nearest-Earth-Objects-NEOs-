@@ -24,7 +24,7 @@ The dataset consists of 338,199 records of NEOs tracked by NASA, and it includes
 The project consists of the following steps:
 
 1. **Data Importing and Cleaning**:
-   - We handle missing values by filling numeric columns with the median and categorical columns with the mode.
+   - I handled missing values by filling numeric columns with the median and categorical columns with the mode.
    - Outliers are identified and removed using the IQR (Interquartile Range) method.
    
 2. **Exploratory Data Analysis (EDA)**:
@@ -33,14 +33,14 @@ The project consists of the following steps:
 
 3. **Handling Class Imbalance**:
    - The dataset is highly imbalanced, with far fewer hazardous objects compared to non-hazardous ones.
-   - We apply **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes for improved model performance.
+   - I applied **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes for improved model performance.
 
 4. **Feature Selection**:
    - Features such as `absolute_magnitude`, `estimated_diameter_min`, `estimated_diameter_max`, `relative_velocity`, and `miss_distance` are selected for model training.
    - Columns like `neo_id`, `name`, and `orbiting_body` are dropped as they do not provide predictive value.
 
 5. **Model Training**:
-   - We build two machine learning models: 
+   - I built two machine learning models: 
      - **RandomForestClassifier**
      - **XGBoostClassifier**
    - Both models are trained and evaluated on a balanced dataset.
@@ -52,7 +52,7 @@ The project consists of the following steps:
      - **Recall**
      - **F1 Score**
      - **Confusion Matrix**
-   - We also visualize the **learning curves** of the models to understand their performance on training and test sets.
+   - I also visualized the **learning curves** of the models to understand their performance on training and test sets.
 
 ## **Code Execution**
 
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Run the Script:
-Execute the Jupyter notebook included in the repository. Ensure the dataset is downloaded.
+Execute the Jupyter Notebook included in the repository. Ensure the dataset is downloaded.
 
 ```python
 # Load Data
@@ -71,7 +71,7 @@ file_path = os.path.join(os.path.dirname(os.path.abspath(file_name)), file_name)
 ```
 
 ### 3. Model Building:
-We split the dataset into 80% training and 20% testing, and then train both models:
+I split the dataset into 80% training and 20% testing, and then trained both models:
 ```python
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
@@ -105,7 +105,7 @@ cm = confusion_matrix(y_test, xg_preds)
 Both models perform well with high accuracy, but the **RandomForestClassifier** slightly outperforms the **XGBoostClassifier**.
 
 ### **Confusion Matrix Visualization**:
-I plot the confusion matrix to visually assess model performance.
+I plotted the confusion matrix to visually assess model performance.
 
 ## **Conclusion**
 
